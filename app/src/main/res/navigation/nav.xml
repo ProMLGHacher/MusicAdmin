@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/splash">
+
+    <fragment
+        android:id="@+id/splash"
+        android:name="com.example.musicadmin.fragments.Splash"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splash_to_musicNameAndArtistName"
+            app:destination="@id/musicNameAndArtistName" />
+    </fragment>
+    <fragment
+        android:id="@+id/musicNameAndArtistName"
+        android:name="com.example.musicadmin.fragments.MusicNameAndArtistName"
+        android:label="fragment_music_name_and_artist_name"
+        tools:layout="@layout/fragment_music_name_and_artist_name" >
+        <action
+            android:id="@+id/action_musicNameAndArtistName_to_uploadTrackFragment"
+            app:destination="@id/uploadTrackFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/uploadCoverFragment"
+        android:name="com.example.musicadmin.fragments.UploadCoverFragment"
+        android:label="fragment_upload_cover"
+        tools:layout="@layout/fragment_upload_cover" >
+        <action
+            android:id="@+id/action_uploadCoverFragment_to_musicNameAndArtistName"
+            app:destination="@id/musicNameAndArtistName" />
+    </fragment>
+    <fragment
+        android:id="@+id/uploadTrackFragment"
+        android:name="com.example.musicadmin.fragments.UploadTrackFragment"
+        android:label="fragment_upload_track"
+        tools:layout="@layout/fragment_upload_track" >
+        <action
+            android:id="@+id/action_uploadTrackFragment_to_uploadCoverFragment"
+            app:destination="@id/uploadCoverFragment" />
+    </fragment>
+</navigation>
